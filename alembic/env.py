@@ -20,8 +20,9 @@ fileConfig(config.config_file_name)
 target_metadata = Base.metadata
 
 def run_migrations_offline():
+    url = os.getenv("DATABASE_URL") or config.get_main_option("sqlalchemy.url")
     context.configure(
-        url=config.get_main_option("sqlalchemy.url"),
+        url=url,
         target_metadata=target_metadata,
         literal_binds=True,
         compare_type=True,
@@ -30,12 +31,20 @@ def run_migrations_offline():
         context.run_migrations()
 
 def run_migrations_online():
-    connectable = engine_from_config(
-        config.get_section(config.config_ini_section),
-        prefix="sqlalchemy.",
-        poolclass=pool.NullPool,
-        connect_args={"connect_timeout": 10},
-    )
+    database_url = os.getenv("DATABASE_URL")
+    if database_url:
+        connectable = create_engine(
+            database_url,
+            poolclass=pool.NullPool,
+            connect_args={"connect_timeout": 10},
+        )
+    else:
+        connectable = engine_from_config(
+            config.get_section(config.config_ini_section),
+            prefix="sqlalchemy.",
+            poolclass=pool.NullPool,
+            connect_args={"connect_timeout": 10},
+        )
     with connectable.connect() as connection:
         context.configure(
             connection=connection,
