@@ -1,0 +1,60 @@
+# Python cache files
+**/__pycache__/
+**/*.py[cod]
+**/*.pyc
+**/*.pyo
+**/*.pyd
+.Python
+*.so
+
+# Virtual Environment & Secrets
+.env
+.env.*
+.venv
+# env/
+# venv/
+# ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# # Project specific
+# *.log
+# logs/
+# *.db
+# *.sqlite3
+# templates/
+
+# # Database
+# *.postgresql
+# *.psql
+
+# # Testing
+# .coverage
+# htmlcov/
+# .pytest_cache/
+# .tox/
+# coverage.xml
+# *.cover
+
+# # Documentation
+# docs/_build/
+
+# Alembic
+alembic/versions/__pycache__/
+alembic/__pycache__/
+
+# # Local development
+# local_settings.py
+# db.sqlite3
+# media/
+
+# Security & Credentials
+*.pem
+*.key
+*.crt
+google_cloud_cred.json

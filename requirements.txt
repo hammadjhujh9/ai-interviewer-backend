@@ -1,0 +1,46 @@
+# Core dependencies
+fastapi==0.109.1
+uvicorn==0.27.0
+sqlalchemy==2.0.25
+pydantic==2.5.3
+pydantic-settings==2.1.0
+python-dotenv==1.0.0
+python-jose==3.3.0
+passlib==1.7.4
+bcrypt==4.1.2
+psycopg2-binary==2.9.9
+alembic==1.13.1
+
+# Email support
+fastapi-mail==1.4.1
+jinja2==3.1.3
+
+# PDF processing
+PyPDF2==3.0.1
+
+# AI/ML
+groq==0.4.1
+
+# Security
+python-multipart==0.0.6
+python-jose[cryptography]==3.3.0
+
+# Testing
+pytest==7.4.4
+httpx==0.26.0
+pytest-asyncio==0.23.3
+
+# Development
+black==24.1.1
+flake8==7.0.0
+
+# Interview
+aiortc==1.5.0
+opencv-python==4.8.1
+mediapipe==0.10.8
+google-cloud-speech==2.21.0
+google-cloud-texttospeech==2.14.1
+websockets==14.1
+
+# AWS Polly for TTS
+boto3==1.28.0
